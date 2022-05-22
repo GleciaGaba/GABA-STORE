@@ -1,0 +1,59 @@
+
+
+<form class="mt-5 col-md-6 m-auto" [formGroup]="signUpForm" (ngSubmit)="onSubmitForm()">
+    <h1>Inscrivez-vous</h1>
+    <div class="mb-3">
+        <label for="username" class="form-label" style="margin-top: 30px;">E-mail</label>
+        <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input placeholder="entrer votre username" formControlName="userName" type="text" class="form-control"
+                aria-describedby="userHelp" id="username">
+        </div>
+     
+        <div id="userHelp" class="form-text alert-danger"
+            *ngIf="signUpForm.controls['userName'].touched && signUpForm.controls['userName'].invalid ">
+            L'adresse email est obligatoire
+        </div>
+        <div class="form-text alert-danger"
+            *ngIf="signUpForm.controls['userName'].touched && signUpForm.controls['userName'].getError('email') ">
+            Le format de l'email n'est pas correct ... 
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input formControlName="password" type="password" id="password" class="form-control"
+            aria-describedby="passwordHelpBlock">
+
+       
+        
+        <div *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['password'].getError('required')"
+            class="form-text alert-danger">
+            Le mot de passe est obligatoire
+        </div>
+        <div *ngIf="signUpForm.controls['password'].dirty && signUpForm.controls['password'].getError('minlength')"
+            class="form-text alert-danger">
+            Le mot de passe doit avoir une longueur min de 8 caractères
+        </div>
+        <div *ngIf="signUpForm.controls['password'].dirty && signUpForm.controls['password'].getError('maxlength')"
+            class="form-text alert-danger">
+            Le mot de passe ne doit pas dépasser 12 caractères
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="confirm-password" class="form-label">Confirmation</label>
+        <input formControlName="confirmPassword" type="password" id="confirm-password" class="form-control">
+       
+        <div class="form-text alert-danger"
+            *ngIf="signUpForm.controls['confirmPassword'].dirty && signUpForm.getError('mismatch')">
+            Les mots de passe doivent être similaires 
+        </div>
+    </div>
+    <div class="d-grid col-12 col-md-2 ms-auto">
+        <button [disabled]="signUpForm.invalid" type="submit" class="btn btn-primary text-nowrap">Inscrivez-vous</button>
+    </div>
+   
+</form>
+
+
+
+

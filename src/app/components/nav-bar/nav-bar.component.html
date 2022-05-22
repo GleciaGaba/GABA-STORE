@@ -1,0 +1,72 @@
+<header>
+    <nav class="sticky-top navbar navbar-expand-md navbar-light bg-#f0f0f0"
+        style="background-color:#f0f0f0;font-weight: 700;">
+        <div class="container-xl">
+            <a class="navbar-brand" routerLink="product-list" routerLinkActive="active">
+                <img src="assets/IMG/logo.png" alt="" width="150px" height="50px" class="d-inline-block align-text-top">
+            </a>
+            <form class="d-flex" onsubmit="false;" method="">
+                <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success"
+                    style="color:dimgray; background-color:#f0f0f0; border-color: dimgrey; margin-right: 20px;"
+                    type="submit">
+                    <img src="assets/IMG/loupe.png" alt="" style="height: 20px;">
+                </button>
+            </form>
+            <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse static-top" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="product-list" routerLinkActive="active">
+                            Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/category/1" routerLinkActive="active" aria-current="protein">
+                            Protéines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/category/2" routerLinkActive="active">
+                            Vitamines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/category/3" routerLinkActive="active">
+                            Beauté</a>
+                    </li>
+                    <li class="nav-item" *ngIf="isAuthenticated ==true">
+                        <a class="nav-link" routerLink="admin" routerLinkActive="active">
+                            Administrateur</a>
+                    </li>
+                </ul>
+                
+                
+                <ul class="navbar-nav d-flex ms-auto">
+                    <li class="nav-item d-flex ms-auto" *ngIf="isAuthenticated ==false">
+                        <a class="nav-link" routerLink="sign-in" routerLinkActive="active">
+                            <img src="assets/IMG/user.png" alt="Sign-in" style="height: 32px;">
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item d-flex ms-auto" *ngIf="isAuthenticated ==true">
+                        <a class="nav-linkclickable" (click)="onClickLogout()">
+                            <img src="assets/IMG/logout.png" alt="logout" style="height: 35px; margin-top: 8px; "></a>
+                    </li>
+
+                    <li class="nav-item d-flex ms-auto">
+                        <a class="nav-link" routerLink="panier" routerLinkActive="active">
+                            <img src="assets/IMG/icon_panier.png" alt="cart" style="height: 32px;">
+                        </a>
+                    </li>
+                </ul>
+
+               
+
+
+
+            </div>
+        </div>
+    </nav>
+</header>

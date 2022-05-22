@@ -1,0 +1,26 @@
+
+
+
+<div class="container">
+    <div class="row justify-content-md-center" >
+        <div class="col col-lg-12">
+            <img src="assets/IMG/vitamines/banner.png" alt="banner" style="height:300px; width: auto;">
+            <h1 style="margin-top:100px; margin-bottom: 80px;">Nos Produits</h1>
+        </div>
+        
+    </div>
+    <div class="row" *ngFor="let product of listProducts">
+        <div class="col-md-auto" style="margin-bottom: 20px;">
+        <img src="{{product.imageUrl}}" style="height:250px;width:300px;" />
+        </div>
+        <div class="col col-lg-2" style="margin-bottom: 20px;">
+            {{product.name}}
+        </div>
+        <div class="col-md-auto" style="margin-bottom: 20px;">
+        {{product.description}}
+        </div>
+        <div class="col-md-auto" style="margin-bottom: 50px;">
+            {{product.price | currency:'€' }}
+        </div>
+    </div>
+</div>

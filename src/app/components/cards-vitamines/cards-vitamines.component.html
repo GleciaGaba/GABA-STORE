@@ -1,0 +1,15 @@
+<div class="card h-100">
+    <a [routerLink]="['/vitamines',vitamine.id]" rel="noopener">
+        <img [src]="'/assets/' + vitamine.coverPath" class="card-img-top" [alt]="'Image du produit ' + vitamine.title">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title text-center h6">
+            <a [routerLink]="['/vitamines',vitamine.id]" rel="noopener">
+                {{vitamine.title}}
+            </a>
+        </h5>
+        <p class="card-text h2">
+            {{vitamine.price}}€
+        </p>
+    </div>
+</div>
