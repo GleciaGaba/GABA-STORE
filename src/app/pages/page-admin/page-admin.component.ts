@@ -16,14 +16,15 @@ export class PageAdminComponent implements OnInit {
     private fb: FormBuilder,
     private adminService: AdminService,
     private router: Router
-    ){ }
+  ) { }
 
   ngOnInit(): void {
     this.newProductForm = this.fb.group({
+      category: ['', Validators.required],
       name: ['', Validators.required],
-      area: [0, Validators.required],
-      population: [0, Validators.required],
-      capital: ['', Validators.required]
+      description: ['', Validators.required],
+      price: [0, Validators.required],
+      image: ['', Validators.required]
     })
   }
 
@@ -33,20 +34,20 @@ export class PageAdminComponent implements OnInit {
       this.newProductForm.value.name,
       this.newProductForm.value.description,
       this.newProductForm.value.image,
-      this.newProductForm.value.price
-  );
+      this.newProductForm.value.price,
+      this.newProductForm.value.category
+    );
     console.log(newProduct);
 
     this.adminService.createNewProduct(newProduct).subscribe(() => {
       console.log("Le product a été créé !!!");
-      this.router.navigateByUrl('/admin');
+      this.router.navigateByUrl('/create');
     });
 
-    //fetch(url)
   }
-  
 
 
-}  
+
+}
 
 

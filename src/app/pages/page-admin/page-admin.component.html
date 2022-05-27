@@ -1,7 +1,24 @@
 
 <form class="mt-5 col-md-6 m-auto" [formGroup]= "newProductForm" (ngSubmit)="onSubmitForm()">
     <h1>Nouveaux Produits</h1>
-    <div class="mb-3" style="margin-top: 50px;">
+   
+    <div class="input-group mb-3" style="margin-top: 50px;">
+        <label for="category" class="form-label">Categorie</label>
+       <div class="input-group">
+        <input placeholder="entrer la categorie" formControlName="category" type="text" class="form-control" aria-label="Text input with dropdown button" id="category">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Dropdown</button>
+        <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="protein" href="#">Protéines</a></li>
+            <li><a class="vitamine" href="#">Vitamines</a></li>
+            <li><a class="beauty" href="#">Beauté</a></li>
+            
+            
+        </ul>
+       </div>
+    </div>
+    
+    <div class="mb-3">
         <label for="name" class="form-label">Nom</label>
         <div class="input-group">
             <input placeholder="entrer le nom du produit" formControlName="name" type="text" class="form-control"
@@ -11,8 +28,8 @@
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <div class="input-group">
-            <input placeholder="entrer la description du produit" formControlName="capital" type="text"
-                class="form-control" aria-describedby="userHelp" id="capital">
+            <input placeholder="entrer la description du produit" formControlName="description" type="text"
+                class="form-control" aria-describedby="userHelp" id="description">
         </div>
     </div>
     <div class="mb-3">
@@ -26,7 +43,7 @@
         <label for="image" class="form-label">Image</label>
         <div class="input-group">
             <input placeholder="entrer l'url du produit" formControlName="image" type="url"
-                class="form-control" aria-describedby="userHelp" id="population">
+                class="form-control" aria-describedby="userHelp" id="image">
         </div>
     </div>
     <div class="d-grid col-12 col-md-2 ms-auto">

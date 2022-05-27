@@ -23,7 +23,7 @@ export class AdminListComponent implements OnInit {
     console.log(productId);
     if (productId) {
       this.adminService.deleteProduct(productId).subscribe({
-        next: (response: any) => {
+        next: (response) => {
 
 
           this.listProducts = this.listProducts.filter(product => product.id !== productId);
