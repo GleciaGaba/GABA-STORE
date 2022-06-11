@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center mt-5  flex-wrap">
+    <div class="card border-0 px-4 pb-5" style="width: 28rem;">
+        <img src="./../../../assets{{product.Url}}" class="card-img-top" alt="photo of {{product.name}}">
+    </div>
+    <div class="card border-0 px-4" style="width: 28rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}
+            </h5>
+            <p>{{product.description}}</p>
+            <div class="d-flex justify-content-between mt-4 mb-2">
+                <p class="h5">{{product.price}}€</p>
+                <div>
+                    <select class="form-select-sm">
+                        <option selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="3">5</option>
+                    </select>
+                    <button class="btn btn-primary ms-2">Ajouter au panier</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

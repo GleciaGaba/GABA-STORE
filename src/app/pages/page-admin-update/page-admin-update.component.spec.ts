@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardsVitaminesComponent } from './cards-vitamines.component';
+import { PageAdminUpdateComponent } from './page-admin-update.component';
 
-describe('CardsVitaminesComponent', () => {
-  let component: CardsVitaminesComponent;
-  let fixture: ComponentFixture<CardsVitaminesComponent>;
+describe('PageAdminUpdateComponent', () => {
+  let component: PageAdminUpdateComponent;
+  let fixture: ComponentFixture<PageAdminUpdateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardsVitaminesComponent ]
+      declarations: [ PageAdminUpdateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardsVitaminesComponent);
+    fixture = TestBed.createComponent(PageAdminUpdateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

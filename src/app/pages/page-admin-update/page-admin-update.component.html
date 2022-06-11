@@ -1,7 +1,6 @@
-<form class="mt-5 col-md-6 m-auto" [formGroup]="newProductForm" (ngSubmit)="onSubmitForm()">
-    <h1>Nouveaux Produits</h1>
-
-    <div class="mb-3" style="margin-top:15px ;">
+<form *ngIf="updateProductForm" class="mt-5 col-md-6 m-auto" [formGroup]="updateProductForm" (ngSubmit)="onSubmitForm()">
+    <h1>Modifier Produits</h1>
+    <div class="mb-3">
         <label for="name" class="form-label">Nom</label>
         <div class="input-group">
             <input placeholder="entrer le nom du produit" formControlName="name" type="text" class="form-control"
@@ -25,18 +24,12 @@
     <div class="mb-3">
         <label for="image" class="form-label">Image</label>
         <div class="input-group">
-            <input placeholder="entrer l'url du produit" formControlName="image" type="text" class="form-control"
+            <input placeholder="entrer l'url du produit" formControlName="imageUrl" type="text" class="form-control"
                 aria-describedby="userHelp" id="image">
         </div>
     </div>
-    <div>
-        <select class="form-select" aria-label="Default select example" formControlName="category" id="category">
-            <option *ngFor="let category of categories" value={{category.id}}>{{ category.name }}</option>
-           
-    
-        </select>
-    </div>
     <div class="d-grid col-12 col-md-2 ms-auto">
-        <button [disabled]="newProductForm.invalid" type="submit" class="btn btn-primary text-nowrap">Créer</button>
+        <button [disabled]="updateProductForm.invalid" type="submit" class="btn btn-primary text-nowrap">Modifier</button>
     </div>
 </form>
+

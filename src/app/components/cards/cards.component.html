@@ -1,0 +1,15 @@
+<div class="card h-100">
+    <a [routerLink]="['/product-details',product.id]" rel="noopener">
+        <img [src]="product.imageUrl"  class=" card-img-top" [alt]="product.name">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title text-center h6">
+            <a [routerLink]="['/product',product.id]" rel="noopener">
+                {{product.name}}
+            </a>
+        </h5>
+        <p class="card-text h2">
+            {{product.price}}€
+        </p>
+    </div>
+</div>

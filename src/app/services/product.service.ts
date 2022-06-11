@@ -10,9 +10,6 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  [x: string]: any;
-  
-
   private urlApi: string;
 
   constructor(private http: HttpClient) {

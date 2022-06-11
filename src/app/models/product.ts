@@ -3,14 +3,18 @@ export class Product {
     description: string;
     price: number;
     imageUrl: string;
-    id: any | undefined;
-    category: any;
+    id?: number;
+    categoy: any; 
 
-    constructor(paramName: string, paramDescription: string, paramPrice: number, paramImage: string, paramCategory:any) {
+
+    constructor(paramName: string, paramDescription: string,
+         paramPrice: number, paramImageUrl: string, paramCategory:any) {
         this.name = paramName;
         this.description = paramDescription;
         this.price = paramPrice;
-        this.imageUrl = paramImage;
-        this.category =paramCategory;
+        this.imageUrl = paramImageUrl;
+        this.categoy=paramCategory;
+    
+
     }
 }

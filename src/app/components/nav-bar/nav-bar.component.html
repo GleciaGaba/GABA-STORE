@@ -28,7 +28,7 @@
                             Protéines</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/category/2" routerLinkActive="active">
+                        <a class="nav-link" routerLink="vitamines" routerLinkActive="active">
                             Vitamines</a>
                     </li>
                     <li class="nav-item">
@@ -38,6 +38,10 @@
                     <li class="nav-item" *ngIf="isAuthenticated ==true">
                         <a class="nav-link" routerLink="admin" routerLinkActive="active">
                             Administrateur</a>
+                    </li>
+                    <li class="nav-item" *ngIf="isAuthenticated ==true">
+                        <a class="nav-link" routerLink="admincontrol" routerLinkActive="active">
+                            Control</a>
                     </li>
                 </ul>
                 
@@ -51,8 +55,8 @@
 
 
                     <li class="nav-item d-flex ms-auto" *ngIf="isAuthenticated ==true">
-                        <a class="nav-linkclickable" (click)="onClickLogout()">
-                            <img src="assets/IMG/logout.png" alt="logout" style="height: 35px; margin-top: 8px; "></a>
+                        <a class="nav-link clickable" (click)="onClickLogout()">
+                            <img src="assets/IMG/logout.png" alt="logout" style="height: 35px;"></a>
                     </li>
 
                     <li class="nav-item d-flex ms-auto">

@@ -23,6 +23,7 @@ export class AuthenticationService {
       "password": password
      
     };
+    
     return this.http.post(`${this.urlApi}/users/sign-up`, body);
   }
 
